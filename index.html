@@ -73,7 +73,7 @@ function showTime(){
     const dateDiv = document.getElementById("date");
     const timeDiv = document.getElementById("time");
 
-    dateDiv.innerText = `${fakedTime.getDate()+1}/${fakedTime.getMonth()+1}/${fakedTime.getFullYear()}`;
+    dateDiv.innerText = `${fakedTime.getDate()}/${fakedTime.getMonth()+1}/${fakedTime.getFullYear()}`;
     timeDiv.innerText = `${(hour<10?'0':'') + hour}:${(minute < 10?'0':'') + minute}:${(second<10?'0':'') + second}`;
 }
 
