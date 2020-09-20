@@ -78,7 +78,7 @@ function showTime(){
     const timeDiv = document.getElementById("time");
 
     dateDiv.innerText = `${weekday[fakedTime.getDay()]} ${fakedTime.getDate()}/${fakedTime.getMonth()+1}/${fakedTime.getFullYear()}`;
-    timeDiv.innerText = `${hour}:${minute}:${second}`;
+    timeDiv.innerText = `${(hour<10?'0':'') + hour}:${(minute < 10?'0':'') + minute}:${(second<10?'0':'') + second}`;
 }
 
 setInterval(showTime, 100);
