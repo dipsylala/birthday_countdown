@@ -1,0 +1,90 @@
+<html>
+<head>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Merriweather">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Share+Tech+Mono&display=swap">
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: black;
+
+            -webkit-transform:rotateY(180deg);
+            -moz-transform:rotateY(180deg);
+            -o-transform:rotateY(180deg);
+            -ms-transform:rotateY(180deg);
+        }
+
+        #message {
+          color: grey;
+          font-size: 10em;
+          margin: auto;
+          width: 80%;
+          text-align: center;
+          
+        }
+
+        #date {
+          color: white;
+          font-size: 10em;
+          margin: auto;
+          text-align: center;
+          width: 80%;          
+        }
+
+        #time {
+          color: white;
+          font-size: 15em;
+          margin: auto;
+          width: 80%;          
+          text-align: center;
+          font-family: 'Major Mono Display', monospace;
+        }
+        </style>
+</head>
+<body>
+<div id="message">
+My birthday!!!
+</div>
+<div id="date"></div>
+<div id="time"></div>
+<script>
+
+const d = new Date("September 21, 2020 23:59:30");
+let startTime = new Date();
+
+const weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+function showTime(){
+    const currentTime = new Date();
+
+    const offset = currentTime - startTime;
+
+    const fakedTime = new Date(d.getTime() + offset);
+
+    const hour = fakedTime.getHours();
+    const minute = fakedTime.getMinutes();
+    const second = fakedTime.getSeconds();
+
+    const dateDiv = document.getElementById("date");
+    const timeDiv = document.getElementById("time");
+
+    dateDiv.innerText = `${weekday[fakedTime.getDay()]} ${fakedTime.getDate()}/${fakedTime.getMonth()+1}/${fakedTime.getFullYear()}`;
+    timeDiv.innerText = `${hour}:${minute}:${second}`;
+}
+
+setInterval(showTime, 100);
+
+</script>
+
+</body>
+
+</html>
