@@ -66,8 +66,8 @@ function showTime(){
     const minute = fakedTime.getMinutes();
     const second = fakedTime.getSeconds();
 
-    const dateDiv = $("#date");
-    const timeDiv = $("#time");
+    const dateDiv = document.getElementById("date");
+    const timeDiv = document.getElementById("time");
 
     dateDiv.text(`${fakedTime.getDate()}/${fakedTime.getMonth()+1}/${fakedTime.getFullYear()}`);
     timeDiv.text(`${(hour<10?'0':'') + hour}:${(minute < 10?'0':'') + minute}:${(second<10?'0':'') + second}`);
